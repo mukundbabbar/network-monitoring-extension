@@ -35,4 +35,11 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Package
-          path: staging
+          path: staging/*.zip
+
+      - name: Step 8 - Upload release binaries
+        uses: alexellis/upload-assets@0.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          asset_paths: '["staging/*.zip"]'
