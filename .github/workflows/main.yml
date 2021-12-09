@@ -37,9 +37,10 @@ jobs:
           name: Package
           path: staging/*.zip
 
-      - name: Step 8 - Upload release binaries
-        uses: alexellis/upload-assets@0.2.2
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Step 8 - Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          asset_paths: '["staging/*"]'
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: staging/*.zip
+          tag: ${{ github.ref }}
+          overwrite: true
