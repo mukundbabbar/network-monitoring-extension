@@ -1,5 +1,8 @@
 # Network Monitoring Extension  
 
+![example workflow](https://github.com/mukundbabbar/network-monitoring-extension/actions/workflows/main.yml/badge.svg)
+
+
 ##  Use Case #
    
 Use for monitoring network related metrics.
