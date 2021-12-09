@@ -23,16 +23,16 @@ jobs:
       - name: Step 3 - Run mvn build
         run: mvn clean install
 
-      - name: Step 4 - List files
-        run: ls -a
-        
       - name: Step 5 - Target folder content
         run: |
           cd target
           ls -a
 
-      - name: Step 6 - Upload Artifact
+      - name: Step 6 - Move Artifact
+        run: mkdir staging && cp target/*.zip staging
+ 
+      - name: Step 7 - Upload Artifact
         uses: actions/upload-artifact@v2
-        with: 
-          name: assets-for-download
-          path: target/*.zip
+        with:
+          name: Package
+          path: staging
