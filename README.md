@@ -1,7 +1,7 @@
 # Network Monitoring Extension  
 
-##  Use Case
-
+##  Use Case #
+   
 Use for monitoring network related metrics.
 
 It uses the machine agent's Sigar library to retrieve the metrics, however these metrics (all or partial) can be overriden through scripting if required.
